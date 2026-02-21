@@ -1,6 +1,6 @@
 package com.carro.leetcode.solutions.p0485;
 
-public class Solution {
+class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
         int maxConsec = 0;
         int count = 0;
