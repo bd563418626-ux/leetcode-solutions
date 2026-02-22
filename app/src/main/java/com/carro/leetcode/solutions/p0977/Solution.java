@@ -1,7 +1,5 @@
 package com.carro.leetcode.solutions.p0977;
 
-import java.util.Arrays;
-
 class Solution {
     public int[] sortedSquares(int[] nums) {
         int[] result = new int[nums.length];
