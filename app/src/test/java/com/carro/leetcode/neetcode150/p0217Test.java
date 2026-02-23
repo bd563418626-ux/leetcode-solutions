@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
-class p0127Test {
-    private final p0127 solution = new p0127();
+class p0217Test {
+    private final p0217 solution = new p0217();
 
     @Test
     void returnsTrueWhenArrayContainsDuplicate() {
