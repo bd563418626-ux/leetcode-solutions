@@ -6,25 +6,46 @@ import org.junit.jupiter.api.Test;
 
 class P001_0217Test {
 
-    private final P001_0217 solution = new P001_0217();
+    private final P001_0217_1 solution1 = new P001_0217_1();
+    private final P001_0217_M solutionM = new P001_0217_M();
 
     @Test
     void returnsTrueWhenDuplicateExists() {
-        assertTrue(solution.containsDuplicate(new int[]{1, 2, 3, 1}));
+        assertAllTrue(new int[]{1, 2, 3, 1});
     }
 
     @Test
     void returnsFalseWhenAllValuesUnique() {
-        assertFalse(solution.containsDuplicate(new int[]{1, 2, 3, 4}));
+        assertAllFalse(new int[]{1, 2, 3, 4});
     }
 
     @Test
     void returnsFalseForSingleElement() {
-        assertFalse(solution.containsDuplicate(new int[]{42}));
+        assertAllFalse(new int[]{42});
     }
 
     @Test
     void returnsFalseForEmptyArray() {
-        assertFalse(solution.containsDuplicate(new int[]{}));
+        assertAllFalse(new int[]{});
+    }
+
+    @Test
+    void returnsTrueForDuplicateAtEnd() {
+        assertAllTrue(new int[]{1, 2, 3, 4, 5, 3});
+    }
+
+    @Test
+    void returnsTrueForConsecutiveDuplicates() {
+        assertAllTrue(new int[]{5, 5});
+    }
+
+    private void assertAllTrue(int[] nums) {
+        assertTrue(solution1.containsDuplicate(nums), "P001_0217_1 failed");
+        assertTrue(solutionM.containsDuplicate(nums), "P001_0217_M failed");
+    }
+
+    private void assertAllFalse(int[] nums) {
+        assertFalse(solution1.containsDuplicate(nums), "P001_0217_1 failed");
+        assertFalse(solutionM.containsDuplicate(nums), "P001_0217_M failed");
     }
 }
